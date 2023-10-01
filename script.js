@@ -17,8 +17,9 @@ modalFormCancelBtn.addEventListener('click', () => {
 // Scroll to #ankor links
 const headerMenuLinks = document.querySelectorAll('#header__nav .header__link');
 const footerMenuLinks = document.querySelectorAll('.footer .footer__link');
+const mobileMenuLinks = document.querySelectorAll('#mobile-menu .mobile-menu__link');
 
-[...headerMenuLinks, ...footerMenuLinks].forEach((link) => {
+[...headerMenuLinks, ...footerMenuLinks, ...mobileMenuLinks].forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const target = link.getAttribute('href')?.slice(1);
@@ -29,20 +30,29 @@ const footerMenuLinks = document.querySelectorAll('.footer .footer__link');
         const header = document.getElementById('header');
 
         window.scrollTo(0, targetElement.offsetTop - header.clientHeight);
+
+        mobileMenu.classList.remove('active');
+        burger.classList.remove('active');
     });
 });
 
 // Mobile menu
 const burger = document.getElementById('burger');
-
 const mobileMenu = document.getElementById('mobile-menu');
 
-burger.addEventListener('click', (e) => {
+burger.addEventListener('click', () => {
     if (mobileMenu.classList.contains('active')) {
-        mobileMenu.classList.remove('active')
-        burger.classList.remove('active')
+        mobileMenu.classList.remove('active');
+        burger.classList.remove('active');
         return;
     }
     mobileMenu.classList.add('active');
     burger.classList.add('active');
+});
+
+const mobileBookingBtn = document.getElementById('mobile-menu__reserve');
+
+mobileBookingBtn.addEventListener('click', () => {
+    document.body.style.overflow = 'hidden';
+    modalForm.style.display = 'flex';
 });
