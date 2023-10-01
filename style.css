@@ -4,6 +4,10 @@
     font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1200px;
     padding-right: 20px;
@@ -47,10 +51,11 @@
 /* HEADER */
 
 .header {
-    background-color: rgb(10, 80, 70);
     position: sticky;
-    padding: 20px;
     top: 0px;
+    padding: 20px;
+    z-index: 10;
+    background-color: rgb(10, 80, 70);
 }
 
 .header__phone {
@@ -103,11 +108,16 @@ button:hover {
 
 .header__menu {
     width: 650px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
     letter-spacing: 1px;
     list-style-type: none;
+}
+
+.header__nav {
+    flex: 0 0 100%;
 }
 
 .header__link {
@@ -174,24 +184,36 @@ button:hover {
 }
 
 .about__wrapper {
-    border: 1px solid #e3be96;
+    position: relative;
     border-right: none;
     border-left: none;
     margin-top: 10px;
     text-align: center;
+    z-index: 0;
 }
 
 .about__title {
-    background-color: #e3be96;
     width: 200px;
+    display: inline-block;
+    background-color: #e3be96;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 1px;
     color: #fff;
     text-align: center;
     padding: 10px 20px 10px 20px;
-    display: inline-block;
     vertical-align: middle;
+}
+
+.about__line {
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #e3be96;
 }
 
 .about__description {
@@ -205,7 +227,7 @@ button:hover {
 /* PICTURES */
 
 .pictures__wrapper {
-    padding: 65px 0 50px 0;
+    padding: 65px 30px 50px 30px;
     display: grid;
     grid-template-areas:
         "a c d"
@@ -258,7 +280,7 @@ button:hover {
 /* MAP */
 
 .map {
-    padding: 50px 0 50px 0;
+    padding: 50px 0 0 0;
 }
 
 .map__title {
@@ -282,14 +304,14 @@ button:hover {
 
 .price {
     padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .price__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 317px;
-    width: 533px;
+    max-width: 533px;
 }
 
 .box {
@@ -298,6 +320,10 @@ button:hover {
     display: flex;
     justify-content: center;
     border-radius: 50px;
+}
+
+.price__wrapper {
+    margin: auto;
 }
 
 .price__week {
@@ -330,6 +356,10 @@ button:hover {
     background-color: rgba(10, 80, 70, 0.25);
 }
 
+.price__day span:nth-of-type(2) {
+    margin-left: 17px;
+}
+
 .price__evening {
     display: flex;
     justify-content: space-around;
@@ -348,6 +378,7 @@ button:hover {
 
 .price__holiday {
     margin-right: 65px;
+    margin-top: 10px;
     font-size: 15px;
     color: rgba(10, 80, 70, 0.25);
 }
@@ -447,6 +478,95 @@ button:hover {
     text-align: center;
     margin-top: 50px;
     color: #fff;
+}
+
+.modal-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    color: rgb(227, 190, 150);
+}
+
+.modal-form__body {
+    position: relative;
+    padding: 75px 50px;
+    border-radius: 15px;
+    background-color: rgb(10, 80, 70);
+}
+
+.modal-form__title {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 22px;
+    color: rgb(227, 190, 150);
+}
+
+.modal-form__fieldset {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.modal-form__input {
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: rgb(10 80 70);
+    background-color: #fff;
+    border: 1px solid rgb(227, 190, 150);
+}
+.modal-form__input::placeholder {
+    font-size: 18px;
+    color: rgb(227, 190, 150);
+}
+
+.modal-form__form > * + * {
+    margin-top: 20px;
+}
+
+.modal-form__button {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: rgb(10 80 70);
+    border: 1px solid rgb(10 80 70);
+}
+
+.modal-form__cancel-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    right: 15px;
+    top: 8px;
+
+}
+.modal-form__cancel-btn::before,
+.modal-form__cancel-btn::after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+}
+.modal-form__cancel-btn::before {
+    transform: rotate(45deg);
+}
+.modal-form__cancel-btn::after {
+    transform: rotate(-45deg);
 }
 
 /* MEDIA */
@@ -706,6 +826,38 @@ button:hover {
         max-width: 400px;
     }
 
+    /* PRICE */
+
+    .price__day {
+        margin-top: 15px;
+        width: 300px;
+    }
+    .price__evening {
+        width: 300px;
+    }
+    .price__min-time {
+        width: 300px;
+    }
+
+    .price__week {
+        margin-top: 15px;
+        margin-left: 64px;
+    }
+
+    .price__friday, .price__monday {
+        height: 20px;
+        width: 60px;
+    }
+    .price__friday {
+        margin-left: 5px;
+    }
+    .price__min-time {
+        margin-top: 15px;
+    }
+    .price__holiday {
+        margin-top: 10px;
+    }
+
     /* FOOTER */
 
     .footer__wrapper {
@@ -724,6 +876,7 @@ button:hover {
         margin-top: 30px;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
 }

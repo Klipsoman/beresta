@@ -25,7 +25,7 @@
                 <a href="#"><img src="img/icons/vk.png" alt="vk"></a>
             </div>
 
-            <button class="header__reserve">Забронировать</button>
+            <button class="header__reserve" id="booking-btn">Забронировать</button>
 
             <div class="menu-btn">
                 <span></span>
@@ -33,14 +33,12 @@
                 <span></span>
             </div>
 
-            <nav class="menu">
+            <nav class="header__nav menu" id="header__nav">
                 <ul class="header__menu">
-                    <li class="header__item"><a href="#header" class="header__link">Главная</a></li>
                     <li class="header__item"><a href="#about" class="header__link">О бане</a></li>
                     <li class="header__item"><a href="#pictures" class="header__link">Галерея</a></li>
                     <li class="header__item"><a href="#price" class="header__link">Цены</a></li>
                     <li class="header__item"><a href="#rules" class="header__link">Правила</a></li>
-                    <li class="header__item"><a href="#" class="header__link">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -79,6 +77,7 @@
                 <div class="about__wrapper">
 
                     <h2 class="about__title">О БАНЕ</h2>
+                    <div class="about__line"></div>
 
                     <p class="about__description text"> Если вы устали от городской суеты и стрессов, и хотите окунуться
                         в
@@ -106,35 +105,33 @@
 
         -
         <section class="pictures" id="pictures">
-            <div class="container">
-                <div class="pictures__wrapper">
+            <div class="pictures__wrapper">
 
-                    <div class="pictures__box a">
-                        <img class="pictures__a" src="img/relax_zone/DSC_0192.JPG" alt="relax_zone">
-                        <div class="pictures__title pictures__title--overlay">Зона отдыха</div>
-                    </div>
-
-                    <div class="pictures__box b">
-                        <img class="pictures__b" src="img/sauna/DSC_0179.JPG" alt="sauna">
-                        <div class="pictures__title pictures__title--overlay">Баня</div>
-                    </div>
-
-                    <div class="pictures__box c">
-                        <img class="pictures__c" src="img/bathroom/IMG_7616.png" alt="bathroom">
-                        <div class="pictures__title pictures__title--overlay">Парная</div>
-                    </div>
-
-                    <div class="pictures__box d">
-                        <img class="pictures__d" src="img/swimming_pool/DSC_0168.JPG" alt="swimming_pool">
-                        <div class="pictures__title pictures__title--overlay">Бассейн</div>
-                    </div>
-
-                    <div class="pictures__box e">
-                        <img class="pictures__e" src="img/territory/DSC_0212.JPG" alt="territory">
-                        <div class="pictures__title">Территория</div>
-                    </div>
-
+                <div class="pictures__box a">
+                    <img class="pictures__a" src="img/relax_zone/DSC_0192.JPG" alt="relax_zone">
+                    <div class="pictures__title pictures__title--overlay">Зона отдыха</div>
                 </div>
+
+                <div class="pictures__box b">
+                    <img class="pictures__b" src="img/sauna/DSC_0179.JPG" alt="sauna">
+                    <div class="pictures__title pictures__title--overlay">Баня</div>
+                </div>
+
+                <div class="pictures__box c">
+                    <img class="pictures__c" src="img/bathroom/IMG_7616.png" alt="bathroom">
+                    <div class="pictures__title pictures__title--overlay">Парная</div>
+                </div>
+
+                <div class="pictures__box d">
+                    <img class="pictures__d" src="img/swimming_pool/DSC_0168.JPG" alt="swimming_pool">
+                    <div class="pictures__title pictures__title--overlay">Бассейн</div>
+                </div>
+
+                <div class="pictures__box e">
+                    <img class="pictures__e" src="img/territory/DSC_0212.JPG" alt="territory">
+                    <div class="pictures__title">Территория</div>
+                </div>
+
             </div>
         </section>
 
@@ -163,15 +160,15 @@
                     </div>
 
                     <div class="price__day text box">
-                        <p>день (9:00 - 17:00)</p>
-                        <p>2300</p>
-                        <p>2500</p>
+                        <span>день (9:00 - 17:00)</span>
+                        <span>2300</span>
+                        <span>2500</span>
                     </div>
 
                     <div class="price__evening text box">
-                        <p>вечер (17:00 - 00:00)</p>
-                        <p>2500</p>
-                        <p>3000</p>
+                        <span>вечер (17:00 - 00:00)</span>
+                        <span>2500</span>
+                        <span>3000</span>
                     </div>
 
                     <div class="price__min-time text box">Минимальное время бронирования 3 часа. <br> При заказе от 4-х
@@ -248,21 +245,35 @@
             </div>
             <nav>
                 <ul class="footer__menu">
-                    <li class="footer__item"><a href="#" class="footer__link">Главная</a></li>
-                    <li class="footer__item"><a href="#require" class="footer__link">О бане</a></li>
-                    <li class="footer__item"><a href="#require" class="footer__link">Галерея</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Цены</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Правила</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Контакты</a></li>
+                    <li class="footer__item"><a href="#about" class="footer__link">О бане</a></li>
+                    <li class="footer__item"><a href="#pictures" class="footer__link">Галерея</a></li>
+                    <li class="footer__item"><a href="#price" class="footer__link">Цены</a></li>
+                    <li class="footer__item"><a href="#rules" class="footer__link">Правила</a></li>
                 </ul>
             </nav>
             <div class="footer__copy text">
-                © 2023 Beresta. Все права защищены. При копирование материалов сайта необходима ссылка на источник.
+                © 2023 Beresta. Все права защищены. При копировании материалов сайта необходима ссылка на источник.
             </div>
         </div>
-
-
     </footer>
+
+    <div class="modal-form" id="modal-form">
+        <div class="modal-form__body">
+            <div class="modal-form__cancel-btn" id="modal-form__cancel-btn"></div>
+            <div class="modal-form__title">Оставить заявку</div>
+            <form class="modal-form__form" action="">
+                <fieldset class="modal-form__fieldset">
+                    <input class="modal-form__input" type="text" name="name" placeholder="Имя">
+                </fieldset>
+                <fieldset class="modal-form__fieldset">
+                    <input class="modal-form__input" type="text" name="phone" placeholder="Телефон">
+                </fieldset>
+                <fieldset class="modal-form__fieldset">
+                    <input class="modal-form__button" type="submit" value="Отправить">
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
