@@ -56,3 +56,58 @@ mobileBookingBtn.addEventListener('click', () => {
     document.body.style.overflow = 'hidden';
     modalForm.style.display = 'flex';
 });
+
+// Slider gallery
+
+const modalGallery = document.getElementById('modal-gallery');
+const pictures = document.querySelectorAll('.pictures__box');
+
+const swiper = new Swiper('.swiper', {
+    loop: false,
+    observer: true,
+    observeSlideChildren: true,
+    observeParents: true,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1,
+});
+
+pictures.forEach((picture) => {
+    picture.addEventListener('click', (e) => {
+        document.body.style.paddingRight = '17px';
+        document.body.style.overflow = 'hidden';
+        modalGallery.style.display = 'flex';
+
+        const img = picture.querySelector('img');
+        const type = img.getAttribute('alt');
+        
+        if (!type) {
+            return;
+        }
+
+        const slides = modalGallery.querySelectorAll('.swiper-slide');
+        slides.forEach((slide) => {
+            const slideImg = slide.querySelector('img');
+            
+            if (slideImg.getAttribute('alt').includes(type)) {
+                slide.style.display = 'block';
+                return;
+            }
+            
+            slide.style.display = 'none';
+        })
+
+        swiper.update();
+    });
+});
+
+modalGallery.addEventListener('click', (e) => {
+    if (modalGallery.style.display === 'flex' && e.target === modalGallery) {
+        modalGallery.style.display = 'none';
+        document.body.style.paddingRight = '0';
+        document.body.style.overflow = 'auto';
+    }
+});

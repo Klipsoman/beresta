@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <title>Beresta</title>
 </head>
 
@@ -124,32 +125,31 @@
 
         </section>
 
-        -
         <section class="pictures" id="pictures">
             <div class="pictures__wrapper">
 
-                <div class="pictures__box a">
+                <div class="pictures__box a picture">
                     <img class="pictures__a" src="img/relax_zone/DSC_0192.JPG" alt="relax_zone">
                     <div class="pictures__title pictures__title--overlay">Зона отдыха</div>
                 </div>
 
-                <div class="pictures__box b">
+                <div class="pictures__box b picture">
                     <img class="pictures__b" src="img/sauna/DSC_0179.JPG" alt="sauna">
                     <div class="pictures__title pictures__title--overlay">Баня</div>
                 </div>
 
-                <div class="pictures__box c">
+                <div class="pictures__box c picture">
                     <img class="pictures__c" src="img/bathroom/IMG_7616.png" alt="bathroom">
                     <div class="pictures__title pictures__title--overlay">Парная</div>
                 </div>
 
-                <div class="pictures__box d">
+                <div class="pictures__box d picture">
                     <img class="pictures__d" src="img/swimming_pool/DSC_0168.JPG" alt="swimming_pool">
                     <div class="pictures__title pictures__title--overlay">Бассейн</div>
                 </div>
 
                 <div class="pictures__box e">
-                    <img class="pictures__e" src="img/territory/DSC_0212.JPG" alt="territory">
+                    <img class="pictures__e picture" src="img/territory/DSC_0212.JPG" alt="territory">
                     <div class="pictures__title">Территория</div>
                 </div>
 
@@ -296,6 +296,74 @@
         </div>
     </div>
 
+    <div class="modal-gallery" id="modal-gallery">
+        <div class="modal-gallery__body">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/bathroom/IMG_7616.png" alt="bathroom">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/bathroom/IMG_7619.png" alt="bathroom">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/bathroom/IMG_7633.png" alt="bathroom">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/relax_zone/DSC_0192.JPG" alt="relax_zone">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/relax_zone/IMG_7655.png" alt="relax_zone">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/relax_zone/IMG_7669.png" alt="relax_zone">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/relax_zone/IMG_7679.png" alt="relax_zone">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/sauna/DSC_0179.JPG" alt="sauna">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/sauna/IMG_7606.png" alt="sauna">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/sauna/IMG_7612.png" alt="sauna">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/swimming_pool/DSC_0168.JPG" alt="swimming_pool">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/swimming_pool/IMG_7598.png" alt="swimming_pool">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/swimming_pool/IMG_7601.png" alt="swimming_pool">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/swimming_pool/IMG_7628.png" alt="swimming_pool">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/territory/DSC_0212.JPG" alt="territory">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/territory/DSC_0220.JPG" alt="territory">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/territory/DSC_0222.JPG" alt="territory">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

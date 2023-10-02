@@ -247,7 +247,6 @@ button:hover {
 
 .pictures__box {
     position: relative;
-    z-index: -2;
 }
 
 .pictures__title {
@@ -484,6 +483,8 @@ button:hover {
     color: #fff;
 }
 
+/* Modal form */
+
 .modal-form {
     display: none;
     position: fixed;
@@ -492,7 +493,6 @@ button:hover {
     right: 0;
     bottom: 0;
     z-index: 100;
-    /* display: flex; */
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, .5);
@@ -571,6 +571,39 @@ button:hover {
 }
 .modal-form__cancel-btn::after {
     transform: rotate(-45deg);
+}
+
+/* Modal gallery */
+
+.modal-gallery {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    color: rgb(227, 190, 150);
+}
+
+.modal-gallery__body {
+    position: relative;
+    max-width: 500px;
+    padding: 75px 50px;
+    border-radius: 15px;
+    background-color: rgb(10, 80, 70);
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+.swiper-slide img {
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* MEDIA */
