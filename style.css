@@ -591,10 +591,9 @@ button:hover {
 
 .modal-gallery__body {
     position: relative;
-    max-width: 500px;
-    padding: 75px 50px;
+    max-width: 550px;
     border-radius: 15px;
-    background-color: rgb(10, 80, 70);
+    /* background-color: rgb(10, 80, 70); */
 }
 
 .swiper-wrapper {
@@ -974,5 +973,14 @@ button:hover {
         gap: 10px;
     }
 
+    /* modal gallery */
+    .modal-gallery__body {
+        max-width: 400px;
+    }
 }
 
+@media (min-width: 320px) and (max-width: 450px) {
+    .modal-gallery__body {
+        max-width: 300px;
+    }
+}
