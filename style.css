@@ -247,6 +247,7 @@ button:hover {
 
 .pictures__box {
     position: relative;
+    cursor: pointer;
 }
 
 .pictures__title {
@@ -593,7 +594,6 @@ button:hover {
     position: relative;
     max-width: 550px;
     border-radius: 15px;
-    /* background-color: rgb(10, 80, 70); */
 }
 
 .swiper-wrapper {
